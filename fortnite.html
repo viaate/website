@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+            background: linear-gradient(to right, #3498db, #f1c40f);
+            color: white;
+            padding: 50px;
+            transition: background 0.5s ease-in-out, color 0.5s ease-in-out;
+        }
+        .container {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 25px 40px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            margin: 20px auto;
+            width: fit-content;
+        }
+        .flex-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .image-rank-container, .skin-container {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 25px 40px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            width: 280px; /* Match the size */
+        }
+        .toggle-theme {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 24px;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+        h1 {
+            font-size: 42px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            animation: fadeIn 1s ease-in-out;
+        }
+        p strong {
+            color: #f1c40f;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .progress-container {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 15px;
+        }
+        .progress-bar {
+            width: 100%;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 10px;
+            height: 15px;
+            overflow: hidden;
+        }
+        .progress-fill {
+            height: 100%;
+            background: #f1c40f;
+            width: 35%;
+        }
+        .image-rank-container img, .skin-container img {
+            width: 200px;
+            height: auto;
+            transition: transform 0.3s ease-in-out;
+        }
+        .image-rank-container img:hover, .skin-container img:hover {
+            transform: scale(1.05);
+        }
+        .rank-title {
+            font-size: 24px; /* Make Bronze I text bigger */
+            font-weight: bold;
+            color: #f1c40f;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <i class="fas fa-sun toggle-theme" onclick="toggleTheme()"></i>
+    <div class="container">
+        <h1>Welcome!</h1>
+        <p>I'm <strong style="color: #e74c3c;">Viaate</strong></p>
+        <p>I am currently level <strong style="color: #2ecc71;">109</strong></p>
+        <p>I am currently <strong style="color: #f1c40f;">Platinum 2</strong></p>
+        <p>I have been wearing <strong style="color: #3498db;">Lexa Harbringer</strong> for <strong id="daysCount"></strong> days</p>
+    </div>
+    <div class="flex-container">
+        <div class="image-rank-container">
+            <p class="rank-title">Platinum 2</p>
+            <img src="https://static.wikia.nocookie.net/fortnite/images/3/3e/Platinum_II_-_Icon_-_Fortnite.png/revision/latest?cb=20230531201233" alt="Platinum 2 Rank">
+        </div>
+        <div class="skin-container">
+            <h2><strong style="color: #f1c40f;">Current Skin</strong></h2>
+            <img src="https://static.wikia.nocookie.net/fortnite/images/9/9d/Lexa_Hexbringer_-_Outfit_-_Fortnite.png/revision/latest?cb=20241012072105" alt="Lexa Harbringer">
+        </div>
+    </div>
+    <script>
+        function calculateDays() {
+            const startDate = new Date("2025-03-09");
+            const today = new Date();
+            const difference = Math.floor((today - startDate) / (1000 * 60 * 60 * 24));
+            document.getElementById("daysCount").innerText = difference;
+        }
+        calculateDays();
+        
+        function toggleTheme() {
+            const body = document.body;
+            const themeIcon = document.querySelector(".toggle-theme");
+            if (body.style.background.includes("black")) {
+                body.style.background = "linear-gradient(to right, #3498db, #f1c40f)";
+                body.style.color = "white";
+                themeIcon.classList.replace("fa-moon", "fa-sun");
+            } else {
+                body.style.background = "linear-gradient(to right, black, gray)";
+                body.style.color = "#f1c40f";
+                themeIcon.classList.replace("fa-sun", "fa-moon");
+            }
+        }
+    </script>
+</body>
+</html>
