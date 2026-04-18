@@ -1,48 +1,91 @@
-<main>
-    <article>
-        <section class="body">
-            <div class="page-header">
-                Hi, I'm <span class="p-name">Olivia Gonsher</span><span class="primary-color">!</span>
+<!DOCTYPE html>
+<html lang="en" class="dark light">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    
+    <meta property="og:title" content="Home">
+
+    <link href="css/8ZTS7OeDZkoj.css" rel="stylesheet">
+    <link rel="alternate" type="application/atom+xml" title="" href="https://olivia.mobi/atom.xml">
+    <link rel="stylesheet" type="text/css" href="css/GvBcx8tWVjbu.css">
+    <link id="darkModeStyle" rel="stylesheet" type="text/css" href="css/KZsDOy9UCdro.css">
+
+    <script src="js/vEw5wg93GTFR.js"></script>
+    <script>setTheme(getSavedTheme());</script>
+
+    <link rel="stylesheet" type="text/css" media="screen" href="css/H7GNq5ipg3nE.css">
+</head>
+
+<body>
+    <div class="content">
+        <header>
+            <div class="main">
+                <a href="https://olivia.mobi"></a>
+                <div class="socials"></div>
             </div>
 
-            <p>
-                I'm a high school student from
-                <span class="p-locality">Kansas City</span>, <span class="p-region">Missouri</span>, <span class="p-country-name">USA 🌍</span>.
-            </p>
-            <p>
-                My pronouns are she/her/hers.
-            </p>
-            <p>
-                I am <span id="age"></span> years old and a student at Pembroke Hill School. I enjoy coding in HTML and sometimes Python.
-            </p>
-            <p>
-                Some things I am interested in include the Rabbit R1, building computers, and deep-diving everything tech-related.
-            </p>
+            <nav>
+                <a href="https://olivia.mobi" style="margin-left: 0.5em">home</a>
+                |<a id="dark-mode-toggle" onclick="toggleTheme(); event.preventDefault();" href="#">
+                    <img src="images/RdmLAb5fbWdE.svg" id="sun-icon" style="filter: invert(1);" alt="Light">
+                    <img src="images/Y6yTvZYByb8r.svg" id="moon-icon" alt="Dark">
+                </a>
+                <script>updateItemToggleTheme()</script>
+            </nav>
+        </header>
 
-            <h3>Contacts</h3>
-            Email: <a class="u-email" rel="me" href="mailto:olivia@olivia.mobi">olivia (at) olivia (dot) mobi</a> <br>
+        <main>
+            <article>
+                <section class="body">
+                    <div class="page-header">
+                        Hi, I'm <span class="p-name">Olivia Gonsher</span><span class="primary-color">!</span>
+                    </div>
 
-            <h3>My Projects</h3>
-            <iframe frameborder="0" src="https://itch.io/embed/4399458?bg_color=121212&amp;fg_color=ffffff&amp;link_color=6c42fc" width="100%" style="max-width: 552px;" height="167">
-                <a href="https://aninsecurecarrot.itch.io/sproutbar">Sproutbar by aninsecurecarrot</a>
-            </iframe>    
-            <br><br>
+                    <p>
+                        I'm a software engineer from
+                        <span class="p-locality">Kansas City</span>, <span class="p-region">Missouri</span>, <span class="p-country-name">USA 🌍</span>.
+                    </p>
+                    <p>
+                        My pronouns are she/her/hers.
+                    </p>
+                    <p>
+                        I am <span id="age"></span> years old and a student at Pembroke Hill School. I enjoy coding in HTML and sometimes Python.
+                    </p>
+                    <p>
+                        Some things I am interested in include the Rabbit R1, building computers, and deep-diving everything tech-related.
+                    </p>
 
-            <script>
-                function calculateAge(birthDate) {
-                    const today = new Date();
-                    const birth = new Date(birthDate);
-                    let age = today.getFullYear() - birth.getFullYear();
-                    const monthDiff = today.getMonth() - birth.getMonth();
-                    
-                    if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birth.getDate())) {
-                        age--;
-                    }
-                    return age;
-                }
-                // Set birthdate to June 22, 2010
-                document.getElementById('age').innerText = calculateAge('2010-06-22');
-            </script>
-        </section>
-    </article>
-</main>
+                    <h3>Contacts</h3>
+                    Email: <a class="u-email" rel="me" href="mailto:olivia@olivia.mobi">olivia (at) olivia (dot) mobi</a> <br>
+
+                    <h3>My Projects</h3>
+                    <iframe frameborder="0" src="https://itch.io/embed/4399458?bg_color=121212&amp;fg_color=ffffff&amp;link_color=6c42fc" width="100%" style="max-width: 552px;" height="167">
+                        <a href="https://aninsecurecarrot.itch.io/sproutbar">Sproutbar by aninsecurecarrot</a>
+                    </iframe>    
+                    <br><br>
+                    <br><br>
+                </section>
+            </article>
+        </main>
+    </div>
+
+    <script>
+        function calculateAge(birthDate) {
+            const today = new Date();
+            const birth = new Date(birthDate);
+            let age = today.getFullYear() - birth.getFullYear();
+            const monthDiff = today.getMonth() - birth.getMonth();
+            
+            if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birth.getDate())) {
+                age--;
+            }
+            return age;
+        }
+        // June 22, 2010
+        document.getElementById('age').innerText = calculateAge('2010-06-22');
+    </script>
+</body>
+</html>
